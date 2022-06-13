@@ -4,7 +4,7 @@ public enum Key {
 
     LEFT,
     RIGHT,
-    JUMP,
-    INTERACT
+    UP,
+    DOWN
 
 }

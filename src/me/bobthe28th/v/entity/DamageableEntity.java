@@ -2,7 +2,7 @@ package me.bobthe28th.v.entity;
 
 import me.bobthe28th.v.util.BoundingBox;
 
-public abstract class DamageableEntity {
+public abstract class DamageableEntity extends Entity {
 
     double health = 0.0;
     double maxHealth = 0.0;

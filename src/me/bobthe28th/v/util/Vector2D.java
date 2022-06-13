@@ -67,4 +67,8 @@ public class Vector2D {
         return (Vector2D) super.clone();
     }
 
+    public String toString() {
+        return "x=" + this.x + ", y=" + this.y;
+    }
+
 }
