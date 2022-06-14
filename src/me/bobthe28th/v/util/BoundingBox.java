@@ -46,6 +46,14 @@ public class BoundingBox {
         this.maxY = Math.max(y1,y2);
     }
 
+    public double getWidth() {
+        return this.maxX - this.minX;
+    }
+
+    public double getHeight() {
+        return this.maxY - this.minY;
+    }
+
     public boolean contains(Vector2D v) {
         return v.getX() >= minX && v.getX() <= maxX && v.getY() >= minY && v.getY() <= maxY;
     }

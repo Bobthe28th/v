@@ -46,6 +46,12 @@ public class Vector2D {
         return this;
     }
 
+    public Vector2D subtract(Vector2D v) {
+        this.x -= v.getX();
+        this.y -= v.getY();
+        return this;
+    }
+
     public Vector2D multiply(double m) {
         this.x *= m;
         this.y *= m;
@@ -63,8 +69,12 @@ public class Vector2D {
         return v.getX() == this.x && v.getY() == y;
     }
 
-    public Vector2D clone() throws CloneNotSupportedException {
-        return (Vector2D) super.clone();
+//    public Vector2D clone() throws CloneNotSupportedException {
+//        return (Vector2D) super.clone();
+//    }
+
+    public Vector2D clone() {
+        return new Vector2D(this.x,this.y);
     }
 
     public String toString() {
