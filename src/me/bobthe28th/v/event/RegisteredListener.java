@@ -1,6 +1,4 @@
-package me.bobthe28th.v.entity;
-
-import me.bobthe28th.v.event.EventHandler;
+package me.bobthe28th.v.event;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;

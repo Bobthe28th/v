@@ -30,13 +30,28 @@ public class Vector2D {
         return this.y;
     }
 
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+
     public double getMag() {
         return Math.sqrt(this.x * this.x + this.y * this.y);
     }
 
     public Vector2D normalize() {
-        this.x /= getMag();
-        this.y /= getMag();
+        this.x /= (getMag() == 0) ? 1 : getMag();
+        this.y /= (getMag() == 0) ? 1 : getMag();
+        return this;
+    }
+
+    public Vector2D setMag(double newMag) {
+        double oldMag = getMag();
+        this.x = this.x * newMag / oldMag;
+        this.y = this.y * newMag / oldMag;
         return this;
     }
 

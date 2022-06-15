@@ -1,10 +1,6 @@
 package me.bobthe28th.v.event;
 
-import me.bobthe28th.v.entity.Listener;
-import me.bobthe28th.v.entity.RegisteredListener;
-
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 public class EventManager {

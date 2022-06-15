@@ -17,10 +17,14 @@ public class Camera extends Entity {
         setRender(false);
     }
 
+    public void updateSize() {
+        toRenderBox = new BoundingBox(0,0,frame.getWidth(),frame.getHeight());
+    }
+
     public void render(Graphics2D g) {
         for(Entity entity : EntityManager.getEntityList()) {
             if (entity.doRender()) {
-                if (entity.getRenderBox() != null && toRenderBox.collides(entity.getRenderBox())) {
+                if (entity.getRenderBox() != null && toRenderBox.atPos(pos).collides(entity.getRenderBox().atPos(entity.getPos()))) {
                     Vector2D renderPos = entity.getPos().clone().subtract(pos);
                     g.setColor(Color.BLUE);
                     g.fillRect((int)Math.round(renderPos.getX()),(int)Math.round(renderPos.getY()),(int)Math.round(entity.getRenderBox().getWidth()),(int)Math.round(entity.getRenderBox().getHeight()));

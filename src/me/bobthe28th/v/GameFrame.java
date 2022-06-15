@@ -12,16 +12,19 @@ import java.util.HashMap;
 
 public class GameFrame extends JFrame implements KeyListener {
 
-    public GameFrame() {
+    public void start() {
         this.setSize(400,400);
-        this.setTitle("AAAAAAAAAAAAAA");
+        this.setTitle("v");
         this.setVisible(true);
         this.setFocusable(true);
+        this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         addKeyListener(this);
     }
+
+
 
     @Override
     public void keyTyped(KeyEvent e) {
