@@ -19,6 +19,7 @@ public class Player extends LivingEntity implements Listener {
     @Override
     public void update() {
         vel.add(movement.clone().normalize().multiply(acceleration));
+        //vel.mutiply(1 - deceleration);
         vel.multiply(new Vector2D(1 - (deceleration * (1 - Math.abs(movement.getX()))),1 - (deceleration * (1 - Math.abs(movement.getY())))));
         if (vel.getMagSquared() >= maxSpeed * maxSpeed) {
             vel.setMag(maxSpeed);
