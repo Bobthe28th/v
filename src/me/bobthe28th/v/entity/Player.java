@@ -13,27 +13,24 @@ public class Player extends LivingEntity implements Listener {
     }
 
     double maxSpeed = 10;
-    double acceleration = 2;
+    double acceleration = 1;
     double deceleration = 0.2;
 
     @Override
     public void update() {
-        vel.add(movement.clone().multiply(acceleration));
-        if (vel.getMag() >= maxSpeed) { //TODO getMagSquared
+        vel.add(movement.clone().normalize().multiply(acceleration));
+        vel.multiply(new Vector2D(1 - (deceleration * (1 - Math.abs(movement.getX()))),1 - (deceleration * (1 - Math.abs(movement.getY())))));
+        if (vel.getMagSquared() >= maxSpeed * maxSpeed) {
             vel.setMag(maxSpeed);
         }
         pos.add(vel);
-        vel.multiply(1 - deceleration);
         if (vel.getX() <= 0.1 && vel.getX() >= -0.1) {
             vel.setX(0);
         }
         if (vel.getY() <= 0.1 && vel.getY() >= -0.1) {
             vel.setY(0);
         }
-
     }
-
-    Vector2D movement = new Vector2D(0,0);
 
     @EventHandler
     public void onKeyboardEvent(KeyboardEvent event) {

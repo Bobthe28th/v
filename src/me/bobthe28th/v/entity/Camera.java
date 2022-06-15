@@ -25,6 +25,8 @@ public class Camera extends Entity {
         for(Entity entity : EntityManager.getEntityList()) {
             if (entity.doRender()) {
                 if (entity.getRenderBox() != null && toRenderBox.atPos(pos).collides(entity.getRenderBox().atPos(entity.getPos()))) {
+                    g.setColor(Color.WHITE);
+                    g.drawString(String.valueOf(((double)Math.round(entity.getVel().getMag()*10))/10),0,10);
                     Vector2D renderPos = entity.getPos().clone().subtract(pos);
                     g.setColor(Color.BLUE);
                     g.fillRect((int)Math.round(renderPos.getX()),(int)Math.round(renderPos.getY()),(int)Math.round(entity.getRenderBox().getWidth()),(int)Math.round(entity.getRenderBox().getHeight()));

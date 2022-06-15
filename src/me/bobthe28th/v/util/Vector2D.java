@@ -42,9 +42,15 @@ public class Vector2D {
         return Math.sqrt(this.x * this.x + this.y * this.y);
     }
 
+    public double getMagSquared() {
+        return this.x * this.x + this.y * this.y;
+    }
+
     public Vector2D normalize() {
-        this.x /= (getMag() == 0) ? 1 : getMag();
-        this.y /= (getMag() == 0) ? 1 : getMag();
+        if (this.x != 0 && this.y != 0) {
+            this.x /= getMag();
+            this.y /= getMag();
+        }
         return this;
     }
 
@@ -73,6 +79,18 @@ public class Vector2D {
         return this;
     }
 
+    public Vector2D multiply(Vector2D v) {
+        this.x *= v.getX();
+        this.y *= v.getY();
+        return this;
+    }
+
+    public Vector2D abs() {
+        this.x = Math.abs(this.x);
+        this.y = Math.abs(this.y);
+        return this;
+    }
+
     public double dot(Vector2D v) {
         return this.x * v.getX() + this.y * v.getY();
     }
@@ -83,10 +101,6 @@ public class Vector2D {
         }
         return v.getX() == this.x && v.getY() == y;
     }
-
-//    public Vector2D clone() throws CloneNotSupportedException {
-//        return (Vector2D) super.clone();
-//    }
 
     public Vector2D clone() {
         return new Vector2D(this.x,this.y);

@@ -7,6 +7,7 @@ public abstract class Entity {
 
     Vector2D pos = new Vector2D(0,0);
     Vector2D vel = new Vector2D(0,0);
+    Vector2D movement = new Vector2D(0,0);
 
     boolean render = true;
     BoundingBox renderBox;

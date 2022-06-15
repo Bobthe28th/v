@@ -18,7 +18,6 @@ public class Main {
     static final int SKIP_TICKS = 1000 / TICKS_PER_SECOND;
     static final int MAX_FRAMESKIP = 5;
     static double nextTick;
-    static int totalFrames = 0;
 
     public static void main(String[] args) {
         frame = new GameFrame();
@@ -43,7 +42,6 @@ public class Main {
                 loops ++;
             }
             gameCanvas.repaint(); //interpolate https://dewitters.com/dewitters-gameloop/
-            totalFrames ++;
         }
     }
 }
