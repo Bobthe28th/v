@@ -5,7 +5,7 @@ import me.bobthe28th.v.event.*;
 import me.bobthe28th.v.util.BoundingBox;
 import me.bobthe28th.v.util.Vector2D;
 
-public class Player extends LivingEntity implements Listener {
+public class Player extends LivingEntity implements Listener,Controllable {
 
     public Player() {
         EventManager.registerEvents(this);
@@ -24,12 +24,8 @@ public class Player extends LivingEntity implements Listener {
             vel.setMag(maxSpeed);
         }
         pos.add(vel);
-        if (vel.getX() <= 0.1 && vel.getX() >= -0.1) {
-            vel.setX(0);
-        }
-        if (vel.getY() <= 0.1 && vel.getY() >= -0.1) {
-            vel.setY(0);
-        }
+        if (vel.getX() <= 0.1 && vel.getX() >= -0.1) vel.setX(0);
+        if (vel.getY() <= 0.1 && vel.getY() >= -0.1) vel.setY(0);
     }
 
     @EventHandler

@@ -13,7 +13,6 @@ public class Main {
     static Player p;
     static boolean gameRunning = true;
 
-    static double interpolation = 0;
     static final int TICKS_PER_SECOND = 60;
     static final int SKIP_TICKS = 1000 / TICKS_PER_SECOND;
     static final int MAX_FRAMESKIP = 5;
