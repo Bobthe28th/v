@@ -1,5 +1,6 @@
-package me.bobthe28th.v.entity;
+package me.bobthe28th.v.entity.damageable;
 
+import me.bobthe28th.v.entity.Entity;
 import me.bobthe28th.v.util.BoundingBox;
 
 public abstract class DamageableEntity extends Entity {

@@ -3,7 +3,7 @@ package me.bobthe28th.v;
 import me.bobthe28th.v.entity.Camera;
 import me.bobthe28th.v.entity.Entity;
 import me.bobthe28th.v.entity.EntityManager;
-import me.bobthe28th.v.entity.Player;
+import me.bobthe28th.v.entity.damageable.living.Player;
 
 public class Main {
 
