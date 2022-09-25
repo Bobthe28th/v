@@ -5,7 +5,7 @@ import me.bobthe28th.v.event.*;
 import me.bobthe28th.v.util.BoundingBox;
 import me.bobthe28th.v.util.Vector2D;
 
-public class Player extends LivingEntity implements Listener,Controllable {
+public class Player extends LivingEntity implements Listener {
 
     public Player() {
         EventManager.registerEvents(this);
